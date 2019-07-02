@@ -16,4 +16,8 @@ describe("maskify", function(){
   it("should return maskified for more than 4 chars", function(){
     expect(maskify("jonsnow")).toBe("###snow")
   });
+
+  it("should work for credit card examples", function(){
+    expect(maskify('4556364607935616')).toBe('############5616')
+  });
 });

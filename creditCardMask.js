@@ -1,14 +1,9 @@
 // return masked string
 function maskify(cc) {
-  debugger
   let chars = cc.split("")
   if (chars.length > 4) {
     let charsMasked = chars.map((char, index) => {
-      if (index < chars.length - 4) {
-        return "#"
-      } else {
-        return char
-      }
+      return (index < chars.length - 4) ? "#" : char
     })
     return charsMasked.join("")
   } else {
