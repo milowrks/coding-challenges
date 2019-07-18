@@ -26,4 +26,8 @@ class IsTriangleTest < MiniTest::Test
     assert_equal false, is_triangle(-2, 4, 2)
   end
 
+  def test_return_false_if_any_side_is_not_integer
+    assert_equal false, is_triangle(3.5, 2.5, 1)
+  end
+
 end

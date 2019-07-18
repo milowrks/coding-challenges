@@ -4,5 +4,5 @@
 
 def is_triangle(a,b,c)
   sides = [a, b, c]
-  return sides.all? {|side| side <= (sides.sum - side) && side > 0 }
+  return sides.all? {|side| side <= (sides.sum - side) && side > 0 && (side.is_a? Integer) }
 end
