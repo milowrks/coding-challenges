@@ -3,9 +3,6 @@
 # the sum of the lengths of *any* two sides of a triangle must be greater than or equal to the length of the third side. 
 
 def is_triangle(a,b,c)
-  if (a + b >= c && a + c >= b && b + c >= a) && a > 0 && b > 0 && c > 0
-    return true
-  else
-    return false
-  end
+  sides = [a, b, c]
+  return sides.all? {|side| side <= (sides.sum - side) && side > 0 }
 end
