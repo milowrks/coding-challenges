@@ -17,8 +17,9 @@ require 'pry'
 def sort_transform(numbers)
   str_1 = (numbers.first(2) + numbers.last(2)).join()
   str_2 = (numbers.sort.first(2) + numbers.sort.last(2)).join()
+  str_3 = (numbers.sort.reverse.first(2) + numbers.sort.reverse.last(2)).join()
   # binding.pry
-  return str_1 + "-" + str_2
+  return str_1 + "-" + str_2 + "-" + str_3
 end
 
-sort_transform([1, 2, 5, 6, 3, 4])
+puts sort_transform([1, 2, 5, 6, 3, 4])
