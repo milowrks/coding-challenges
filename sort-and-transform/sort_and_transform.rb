@@ -12,6 +12,6 @@
 
 # example format of solution: 'asdf-tyui-ujng-wedg'
 
-def sort_transform(arr)
-  return true
+def sort_transform(numbers)
+  return (numbers.first(2) + numbers.last(2)).join("-")
 end
