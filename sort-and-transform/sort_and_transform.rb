@@ -12,6 +12,13 @@
 
 # example format of solution: 'asdf-tyui-ujng-wedg'
 
+require 'pry'
+
 def sort_transform(numbers)
-  return (numbers.first(2) + numbers.last(2)).join("-")
+  str_1 = (numbers.first(2) + numbers.last(2)).join()
+  str_2 = (numbers.sort.first(2) + numbers.sort.last(2)).join()
+  # binding.pry
+  return str_1 + "-" + str_2
 end
+
+sort_transform([1, 2, 5, 6, 3, 4])

@@ -6,11 +6,15 @@ Minitest::Reporters.use!(Minitest::Reporters::SpecReporter.new)
 require_relative 'sort_and_transform'
 
 class SortTransformTest < MiniTest::Test
-  def return_four_strings_separated_by_hyphen
-    assert_equal "1-2-3-4", sort_transform([1, 2, 3, 4])
+  def test_return_four_strings_separated_by_hyphen
+   assert_equal "1234-1234", sort_transform([1, 2, 3, 4])
   end
 
-  def return_first_and_last_two_numbers
-    assert_equal "1-2-3-4", sort_transform([1, 2, 5, 6, 3, 4])
+  def test_return_first_and_last_two_numbers
+    assert_equal "1234-1256", sort_transform([1, 2, 5, 6, 3, 4])
+  end
+
+  def test_return_first_and_second_str
+    assert_equal "1234-1256", sort_transform([1, 2, 5, 6, 3, 4])
   end
 end
