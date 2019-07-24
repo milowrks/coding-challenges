@@ -27,8 +27,6 @@ def sort_transform(numbers)
   str_2 = get_word(to_ascii(numbers.sort)).join()
   str_3 = get_word(to_ascii(numbers.sort.reverse)).join()
   str_4 = get_word(to_ascii(numbers).sort).join()
-  
+
   return str_1 + "-" + str_2 + "-" + str_3 + "-" + str_4
 end
-
-puts sort_transform([111, 112, 113, 114, 115, 113, 114, 110])
