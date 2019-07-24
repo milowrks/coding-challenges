@@ -15,11 +15,20 @@
 require 'pry'
 
 def sort_transform(numbers)
-  str_1 = (numbers.first(2) + numbers.last(2)).join()
-  str_2 = (numbers.sort.first(2) + numbers.sort.last(2)).join()
-  str_3 = (numbers.sort.reverse.first(2) + numbers.sort.reverse.last(2)).join()
-  # binding.pry
-  return str_1 + "-" + str_2 + "-" + str_3
+  def to_ascii(numbers)
+    return numbers.map { |num| num.chr }
+  end
+
+  def get_word(numbers)
+    return numbers.first(2) + numbers.last(2)
+  end
+
+  str_1 = get_word(to_ascii(numbers)).join()
+  str_2 = get_word(to_ascii(numbers.sort)).join()
+  str_3 = get_word(to_ascii(numbers.sort.reverse)).join()
+  str_4 = get_word(to_ascii(numbers).sort).join()
+  
+  return str_1 + "-" + str_2 + "-" + str_3 + "-" + str_4
 end
 
-puts sort_transform([1, 2, 5, 6, 3, 4])
+puts sort_transform([111, 112, 113, 114, 115, 113, 114, 110])
