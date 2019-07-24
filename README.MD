@@ -4,3 +4,4 @@
 | Playing with Digits | Find the number that matches a given raise-up algorithm | JavaScript | [g964](https://www.codewars.com/users/g964) on [CodeWars](https://www.codewars.com/kata/playing-with-digits/javascript) | 15 July 2019 |
 | Find Odd Integer | Find the only integer in an array that appears an odd number of times | Ruby | [rbuckley](https://www.codewars.com/users/rbuckley) on [CodeWars](https://www.codewars.com/kata/find-the-odd-int/ruby) | 17 July 2019 |
 | Is This a Triangle | Determine if 3 integers can be valid sides of a triangle | Ruby | [silentZaika](https://www.codewars.com/users/silentZaika) on [CodeWars](https://www.codewars.com/kata/is-this-a-triangle/train/ruby) | 19 July 2019 |
+| Sort and Transform | Return a hyphen-separated string converted from ASCII codes | Ruby | [A.Partridge](https://www.codewars.com/users/A.Partridge) | 22 July 2019 |
