@@ -15,10 +15,27 @@ async function getImageDimension(image) {
   })
 }
 
-async function loadImages(images) {
+function calcAverageDimensions(dimensions) {
+  const averageDimensions = {
+    width: 0,
+    height: 0
+  }
+  return dimensions.reduce((total, currentImage, index, dimensions) => {
+    total.width += currentImage.width;
+    total.height += currentImage.height;
+    if (index === dimensions.length - 1) {
+      return {
+        width: total.width/dimensions.length,
+        height: total.height/dimensions.length
+      }
+    } else {
+      return total
+    }
+  }, averageDimensions)
+}
 
+async function loadImages(images) {
   return Promise.all(images.map(image => getImageDimension(image)))
-		
 }
 
 const imageUrls = [
@@ -29,4 +46,5 @@ const imageUrls = [
   'https://www.w3schools.com/w3css/img_snowtops.jpg',		
 ]
 
+console.log(calcAverageDimensions([{width: 500, height: 300}, {width: 400, height: 200}]))
 console.log(loadImages(imageUrls))
