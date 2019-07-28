@@ -5,7 +5,7 @@ async function getImageDimension(image) {
       resolve({ width: this.width, height: this.height });
     }
     img.onerror = function() {
-      resolve({ width: 0, height: 0 })
+      reject(new Error('Image failed to load.'))
     }
     img.src = image
   })
@@ -17,7 +17,7 @@ function calcAverageDimensions(dimensions) {
     height: 0
   }
   return dimensions
-    .filter(image => image.width > 0)
+    // .filter(image => image.width > 0)
     .reduce((total, currentImage, index, dimensions) => {
       total.width += currentImage.width;
       total.height += currentImage.height;
@@ -33,9 +33,15 @@ function calcAverageDimensions(dimensions) {
 }
 
 async function loadImages(images) {
+
+  let failedImage
+
   const promises = images.map(image => getImageDimension(image))
-  return Promise.all(promises)
-  .then(dimensions => calcAverageDimensions(dimensions))
+  
+  const resolvedPromises = Promise.all(promises.map(p => p.catch(e => failedImage)))
+  .then(values => values.filter(v => v !== failedImage))
+  
+  return resolvedPromises.then(dimensions => calcAverageDimensions(dimensions))
 }
 
 const imageUrls = [
