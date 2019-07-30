@@ -1,26 +1,55 @@
 class Family {
   constructor() {
+    this.members = []
+  }
+
+  addMember(name) {
+    if (!this.members.includes(name)) {
+      const member = {
+        name: name,
+        gender: undefined,
+        parents: []
+      }
+      this.members.push(member)
+    }
+  }
+
+  findMember(name) {
+    return this.members.find(member => member.name = name)
   }
 
   male(name) {
-    if (this.gender) {
+    this.addMember(name)
+    const member = this.findMember(name)
+    if (member.gender) {
       return false;
     } else {
-      this.gender = "male";
+      member.gender = "male";
       return true;
     }
   }
 
   isMale(name) {
-    return this.gender === "male"
+    this.addMember(name)
+    const member = this.findMember(name)
+    return member.gender === "male"
   }
 
   female(name) {
-    if (this.gender) {
+    this.addMember(name)
+    const member = this.findMember(name)
+    if (member.gender) {
       return false;
     } else {
-      this.gender = "female";
+      member.gender = "female";
       return true;
     }
   }
+
+  isFemale(name) {
+    this.addMember(name)
+    const member = this.findMember(name)
+    return member.gender === "female"
+  }
+
 }
