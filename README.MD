@@ -5,4 +5,5 @@
 | Find Odd Integer | Find the only integer in an array that appears an odd number of times | Ruby | [rbuckley](https://www.codewars.com/users/rbuckley) on [CodeWars](https://www.codewars.com/kata/find-the-odd-int/ruby) | 17 July 2019 |
 | Is This a Triangle | Determine if 3 integers can be valid sides of a triangle | Ruby | [silentZaika](https://www.codewars.com/users/silentZaika) on [CodeWars](https://www.codewars.com/kata/is-this-a-triangle/train/ruby) | 19 July 2019 |
 | Sort and Transform | Return a hyphen-separated string converted from ASCII codes | Ruby | [A.Partridge](https://www.codewars.com/users/A.Partridge) | 22 July 2019 |
-| Async Image Loader | Calculate the average dimensions images from an array of URL asynchronously, ignoring images that fail to load | JavaScript | | 29 July 2019
+| Async Image Loader | Calculate the average dimensions images from an array of URL asynchronously, ignoring images that fail to load | JavaScript | | 29 July 2019 |
+| Money Money Money | Calculate the number of years for savings to exceed desired amount given an interest rate | Ruby | [bmw318mt](https://www.codewars.com/users/bmw318mt) on [CodeWars](https://www.codewars.com/kata/money-money-money/ruby) | 21 Aug 2019 |
