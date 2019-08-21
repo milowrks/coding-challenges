@@ -4,7 +4,8 @@ class Family {
   }
 
   addMember(name) {
-    if (!this.members.includes(name)) {
+    debugger
+    if (this.members.filter(member => member.name === name).length === 0) {
       const member = {
         name: name,
         gender: undefined,
@@ -15,7 +16,7 @@ class Family {
   }
 
   findMember(name) {
-    return this.members.find(member => member.name = name)
+    return this.members.find(member => member.name === name)
   }
 
   male(name) {
@@ -52,4 +53,25 @@ class Family {
     return member.gender === "female"
   }
 
+  getParents(name) {
+    this.addMember(name)
+    const member = this.findMember(name)
+    return member.parents.sort()
+  }
+
+  // setParentOf(childName, parentName) {
+  //   this.addMember(childName)
+  //   this.addMember(parentName)
+  //   const child = this.findMember(childName)
+  //   const parent = this.findMember(parentName)
+  //   if (childName === parentName || ) {
+  //     return false
+  //   } else if (child.parents.length < 1) {
+  //     child.parents.push(parent)
+  //   } else if (child.parents.length < 2) {
+  //     if (child.parents[0].gender !== parent.gender) {
+  //       child.parents.push(parent)
+  //     }
+  //   }
+  // }
 }
