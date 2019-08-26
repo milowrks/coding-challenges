@@ -1,4 +1,4 @@
-function validBraces(braces){
+function validBracesOG(braces){
   // define 3 types of braces
   const typesOfBraces = [["(", ")"], ["{", "}"], ["[", "]"]];
   const results = typesOfBraces.map(type => {
@@ -47,13 +47,30 @@ function validBraces(braces){
 
 function validBraces(braces) {
   // define 3 types of braces
+  const typesOfBraces = [["(", ")"], ["{", "}"], ["[", "]"]];
   // loop through brace types
+  const results = typesOfBraces.map(type => {
     // check if string includes both opening and closing brace
-    // yes => split the string by first opening and last closing brace
-    // check if in-between is empty
-      // yes => true
-      // no => recursively call validBraces
-    // no => check if string includes opening brace
+    if (braces.includes(type[0]) && braces.includes(type[1])) {
+      // yes => get the string between first opening and last closing brace
+      const content = braces.slice(braces.indexOf(type[0]) + 1, braces.lastIndexOf(type[1]))
+      debugger
+      // check if in-between is empty
+      if (content === "") {
+        // yes => true
+        return true;
+      } else {
+        // no => recursively call validBraces
+        validBraces(content);
+      }
+      // no => check if string includes either brace
+    } else if (braces.includes(type[0]) || braces.includes(type[1])) {
       // yes => return false
+      return false;
+    } else {
       // no => return true
+      debugger
+    }
+  })
+  return results.filter(result => result === false).length === 0;
 }
