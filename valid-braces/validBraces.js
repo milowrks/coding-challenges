@@ -42,6 +42,18 @@ function validBraces(braces){
       return false;
     }
   })
-  debugger
   return results.filter(result => result === false).length === 0;
+}
+
+function validBraces(braces) {
+  // define 3 types of braces
+  // loop through brace types
+    // check if string includes both opening and closing brace
+    // yes => split the string by first opening and last closing brace
+    // check if in-between is empty
+      // yes => true
+      // no => recursively call validBraces
+    // no => check if string includes opening brace
+      // yes => return false
+      // no => return true
 }
