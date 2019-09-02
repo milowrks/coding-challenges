@@ -52,25 +52,31 @@ function validBraces(braces) {
   const results = typesOfBraces.map(type => {
     // check if string includes both opening and closing brace
     if (braces.includes(type[0]) && braces.includes(type[1])) {
+      console.log(`"${braces}" includes "${type[0]} ${type[1]}" - check content in between.`)
       // yes => get the string between first opening and last closing brace
       const content = braces.slice(braces.indexOf(type[0]) + 1, braces.lastIndexOf(type[1]))
-      debugger
       // check if in-between is empty
       if (content === "") {
         // yes => true
+        console.log(`Content between "${type[0]} ${type[1]}" is empty.`)
         return true;
       } else {
         // no => recursively call validBraces
-        validBraces(content);
+        console.log(`Content between "${type[0]} ${type[1]}" is: "${content}" - validating "${content}"...`)
+        return validBraces(content);
       }
-      // no => check if string includes either brace
+    // no => check if string includes either brace
     } else if (braces.includes(type[0]) || braces.includes(type[1])) {
+      console.log(`"${braces}" include single brace with missing other half => FALSE`)
       // yes => return false
       return false;
     } else {
       // no => return true
-      debugger
+      console.log(`"${braces}" does not include "${type[0]} ${type[1]}".`)
+      return true;
     }
   })
-  return results.filter(result => result === false).length === 0;
+  const resultForType = results.filter(result => result === false).length === 0;
+  console.log(`${braces} => ${resultForType}`)
+  return resultForType;
 }
