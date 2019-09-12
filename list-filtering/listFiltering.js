@@ -1,6 +1,7 @@
-function filter_list(l) {
+function filterList(l) {
   // Return a new array with the strings filtered out
-  return 'it works'
+  const results = l.filter(elem => typeof(elem) === "number")
+  return results;
 }
 
-module.exports = filter_list
+module.exports = filterList;

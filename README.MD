@@ -8,3 +8,4 @@
 | Async Image Loader | Calculate the average dimensions images from an array of URL asynchronously, ignoring images that fail to load | JavaScript | | 29 July 2019 |
 | Money Money Money | Calculate the number of years for savings to exceed desired amount given an interest rate | Ruby | [bmw318mt](https://www.codewars.com/users/bmw318mt) on [CodeWars](https://www.codewars.com/kata/money-money-money/ruby) | 21 Aug 2019 |
 | Valid Braces | Validate opening and closing braces in a string. | JavaScript | [xDranik](https://www.codewars.com/users/xDranik) on [CodeWars](https://www.codewars.com/kata/valid-braces/train/javascript) | 2 Sep 2019 |
+| List Filtering | Remove strings from an array. | JavaScript | [cmgerber](https://www.codewars.com/users/cmgerber) on [CodeWars](https://www.codewars.com/kata/list-filtering/javascript) | 12 Sep 2019 |
